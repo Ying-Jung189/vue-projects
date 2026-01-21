@@ -1,9 +1,16 @@
 <script setup>
-import TheWelcome from '../components/TheWelcome.vue'
+import ProductsList from '../components/ProductsList.vue'
+import ShoppingCart from '../components/ShoppingCart.vue'
 </script>
 
 <template>
   <main>
-    <TheWelcome />
+    <!-- 商品首頁 -->
+     <!-- 搜尋欄 -->
+      <input type="search" name="" id="">
+    <!-- 商品元件帶入 -->
+    <ProductsList />
+     <!-- 購物車帶入 -->
+    <ShoppingCart />
   </main>
 </template>

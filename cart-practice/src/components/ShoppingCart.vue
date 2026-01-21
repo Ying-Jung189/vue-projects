@@ -1,10 +1,10 @@
 <script setup>
-  import HomeView from './views/HomeView.vue';
+  
 </script>
 
 <template>
-
-  <HomeView/>
+  <div class=""></div>
+  <!-- 購物車 -->
 </template>
 
 <style scoped>
