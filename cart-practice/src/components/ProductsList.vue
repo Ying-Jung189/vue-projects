@@ -5,6 +5,11 @@ defineProps({
     required: true
   }
 })
+const emit = defineEmits(['buyItem'])
+
+const buyItem = (product) =>{
+  emit('buyItem', product)
+}
 </script>
 
 <template>
@@ -12,6 +17,7 @@ defineProps({
     <li v-for="item in products" :key="item.id" class="product-card">
       <h4>{{ item.product }}</h4>
       <span>價錢: {{ item.price }}</span>
+      <button class="add-btn" @click = "buyItem(item)">購買</button>
     </li>
   </ul>
   <!-- 產品List -->
@@ -36,9 +42,19 @@ defineProps({
     font-weight: 700;
     margin-bottom: 8px;
   }
-
-  span {
-    font-size: 18px;
+  .add-btn{
+    margin-top: 16px;
+    width: 100%;
+    border-radius: 4px;
+    background-color: green;
+    color: white;
+    padding: 4px;
+    outline: unset;
+    cursor: pointer;
+  }
+  .add-btn:hover{
+    background-color: darkgreen;
+    transition: all .3s ease;
   }
 }
 </style>

@@ -5,6 +5,7 @@ export const useCartStore = defineStore('useCartStore', () => {
   const cartList = ref([])
 
   function addToCart(product) {
+    console.log(product)
     const cartItem = cartList.value.find((item) => item.id === product.id)
     if (cartItem) {
       cartItem.qty += 1
@@ -13,6 +14,7 @@ export const useCartStore = defineStore('useCartStore', () => {
 
       cartList.value.push(newCartItem)
     }
+
   }
 
   return { cartList, addToCart }
