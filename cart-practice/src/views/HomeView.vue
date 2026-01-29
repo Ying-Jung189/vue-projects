@@ -26,9 +26,7 @@ const handleAddToCart = (product) => {
   <main>
     <ShoppingCart />
     <!-- 商品首頁 -->
-    <!-- 搜尋欄 -->
     <section>
-      <input type="search" name="" id="">
       <!-- 商品元件帶入 -->
       <ProductsList :products="productsStore.productsList" @buyItem='handleAddToCart' />
     </section>

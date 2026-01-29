@@ -43,9 +43,6 @@ export const useCartStore = defineStore(
     }
 
     function deleteFromCart(id) {
-      console.log('傳進來的 ID:', id, typeof id)
-      console.log('車內的 ID:', cartList.value[0]?.id, typeof cartList.value[0]?.id)
-
       cartList.value = cartList.value.filter((item) => item.id !== id)
     }
 

@@ -7,7 +7,7 @@ defineProps({
 })
 const emit = defineEmits(['buyItem'])
 
-const buyItem = (product) =>{
+const buyItem = (product) => {
   emit('buyItem', product)
 }
 </script>
@@ -17,10 +17,9 @@ const buyItem = (product) =>{
     <li v-for="item in products" :key="item.id" class="product-card">
       <h4>{{ item.product }}</h4>
       <span>價錢: {{ item.price }}</span>
-      <button class="add-btn" @click = "buyItem(item)">購買</button>
+      <button class="add-btn" @click="buyItem(item)">購買</button>
     </li>
   </ul>
-  <!-- 產品List -->
 </template>
 
 <style scoped>
@@ -42,7 +41,8 @@ const buyItem = (product) =>{
     font-weight: 700;
     margin-bottom: 8px;
   }
-  .add-btn{
+
+  .add-btn {
     margin-top: 16px;
     width: 100%;
     border-radius: 4px;
@@ -52,7 +52,8 @@ const buyItem = (product) =>{
     outline: unset;
     cursor: pointer;
   }
-  .add-btn:hover{
+
+  .add-btn:hover {
     background-color: darkgreen;
     transition: all .3s ease;
   }
