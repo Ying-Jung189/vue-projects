@@ -23,7 +23,7 @@ defineProps({
 })
 </script>
 <template>
-  <div class="input-group" :class="has - error">
+  <div class="input-group" :class="{ 'has-error': error }">
     <label for="">{{ label }}<span class="required">*</span></label>
     <input
       :type="type"
@@ -62,6 +62,7 @@ input[type='text'] {
   border: 1px solid red;
 }
 .error-message {
+  margin: 0;
   color: red;
   font-size: 12px;
 }
