@@ -1,3 +1,8 @@
+<script setup>
+definePageMeta({
+  layout: 'custom',
+});
+</script>
 <template>
   <div class="flex flex-col items-center">
     <h1 class="my-12 text-6xl font-semibold text-gray-800">關於我</h1>
