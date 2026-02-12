@@ -1,8 +1,12 @@
 <script setup>
-const BaseApplyButton = resolveComponent('BaseApplyButton');
-const RoundApplyButton = resolveComponent('RoundApplyButton');
+import RoundApplyButton from './components/round/RoundApplyButton.vue';
+const BaseButton = resolveComponent('BaseApplyButton');
+const RoundButton = resolveComponent('RoundApplyButton');
 
 const useRound = ref(false);
+const notify = () => {
+  useNuxtApp().$toast.info('產生通知');
+};
 </script>
 
 <template>
@@ -11,7 +15,8 @@ const useRound = ref(false);
   </div> -->
   <div class="">
     <h1 class="m-4 text-xl text-gray-800">
-      Nuxt layout 示範，全部頁面都會用到
+      <Icon name="logos:nuxt" size="40"></Icon>
+      layout 示範，全部頁面都會用到
     </h1>
     <!-- <NuxtLayout name="default">
       <template #header>
@@ -39,9 +44,12 @@ const useRound = ref(false);
         />
         <span>使用圓角按鈕</span>
       </label>
-      <component
-        :is="useRound ? RoundApplyButton : BaseApplyButton"
-      ></component>
+      <component :is="useRound ? RoundButton : BaseButton">立即報名</component>
+    </div>
+    <div class="flex flex-col items-center mt-2">
+      <RoundApplyButton class="flex items-center gap-2" @click="notify"
+        ><Icon name="mdi-light:bell" size="20"></Icon>傳送通知</RoundApplyButton
+      >
     </div>
   </div>
 </template>
