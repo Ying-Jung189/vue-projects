@@ -1,5 +1,18 @@
 <script setup></script>
 <template>
-  <h1>搜尋列</h1>
+  <input type="text" class="input-field" />
 </template>
-<style scoped></style>
+<style scoped>
+.input-field {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 8px;
+  font-size: 16px;
+  border-radius: 4px;
+  border: 1px solid #aaa;
+  outline: none;
+  &:focus {
+    border-color: blue;
+  }
+}
+</style>

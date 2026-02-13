@@ -1,11 +1,7 @@
 <script setup>
-import SearchBar from './components/SearchBar.vue'
-import EmployeeList from './components/EmployeeList.vue'
+import EmployeePage from './views/EmployeePage.vue'
 </script>
 
 <template>
-  <SearchBar></SearchBar>
-  <EmployeeList></EmployeeList>
+  <EmployeePage></EmployeePage>
 </template>
-
-<style scoped></style>
