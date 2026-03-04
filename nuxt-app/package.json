@@ -9,8 +9,7 @@
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
     "lint": "eslint .",
-    "lint:fix": "eslint . --fix",
-    "typecheck": "npx vue-tsc --noEmit"
+    "lint:fix": "eslint . --fix"
   },
   "dependencies": {
     "@nuxt/icon": "^2.2.1",
