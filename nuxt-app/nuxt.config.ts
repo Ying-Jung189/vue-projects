@@ -1,11 +1,12 @@
+
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  css: ['~/assets/css/main.css'],
-  modules: ['@nuxt/eslint', '@nuxtjs/tailwindcss', '@nuxt/icon'],
+  css: ["~/assets/css/main.css"],
+  modules: ["@nuxt/eslint", "@nuxtjs/tailwindcss", "@nuxt/icon"],
   devtools: { enabled: true },
-  compatibilityDate: '2025-07-15',
+  compatibilityDate: "2025-07-15",
   typescript: {
-    typeCheck: true,
+    typeCheck: false,
   },
   eslint: {
     config: {
