@@ -1,5 +1,5 @@
 <script setup>
-import { ref } from 'vue'
+import { ref, onMounted  } from 'vue'
 import { useEmployeeStore } from '../stores/useEmployeeStore'
 
 const employeeStore = useEmployeeStore()
@@ -11,14 +11,16 @@ const formData = ref({
   id: '',
   name: '',
   role: '',
-  gmail: '',
+  email: '',
 })
-
+onMounted(() => {
+  employeeStore.fetchEmployees()
+})
 const openAdd = () => {
   isEdit.value = false
 
   // 清空表單
-  formData.value = { id: '', name: '', role: '', gmail: '' }
+  formData.value = { id: '', name: '', role: '', email: '' }
   dialogVisible.value = true
 }
 const openEdit = (row) => {
@@ -31,9 +33,9 @@ const openEdit = (row) => {
 
 const handleSubmit = () => {
   if (isEdit.value) {
-    employeeStore.updateItem(formData.value)
+    employeeStore.editEmployee(formData.value)
   } else {
-    employeeStore.addItem(formData.value)
+    employeeStore.addEmployee(formData.value)
   }
   dialogVisible.value = false
 }
@@ -46,11 +48,11 @@ const handleSubmit = () => {
     <el-table class="employee-list" :data="employeeStore.employeeList" style="width: 100%">
       <el-table-column prop="name" label="姓名" width="180" />
       <el-table-column prop="role" label="職位" />
-      <el-table-column prop="gmail" label="職位" />
+      <el-table-column prop="email" label="職位" />
       <el-table-column label="操作" width="180">
         <template #default="scope">
           <el-button size="small" @click="openEdit(scope.row)">編輯</el-button>
-          <el-button type="danger" size="small" @click="employeeStore.deleteTarget(scope.row.id)">
+          <el-button type="danger" size="small" @click="employeeStore.removeEmployee(scope.row.id)">
             刪除
           </el-button>
         </template>
@@ -67,7 +69,7 @@ const handleSubmit = () => {
           <el-input v-model="formData.role" />
         </el-form-item>
         <el-form-item label="信箱">
-          <el-input v-model="formData.gmail" />
+          <el-input v-model="formData.email" />
         </el-form-item>
       </el-form>
 
