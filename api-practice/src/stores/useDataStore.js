@@ -20,5 +20,5 @@ export const useDataStore = defineStore("useDataStore", () => {
     }
   }
 
-  return { fetchData };
+  return { data, loading, error, fetchData };
 });
