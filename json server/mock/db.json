@@ -1,0 +1,22 @@
+{
+  "users": [
+    {
+      "id": 2,
+      "name": "Joh",
+      "email": "b@test.com",
+      "role": "人資"
+    },
+    {
+      "id": 4,
+      "name": "ggg",
+      "role": "行政",
+      "email": "ggg@gmail.com"
+    },
+    {
+      "id": 5,
+      "name": "lisa",
+      "role": "行銷",
+      "email": "44444@gmail.cm"
+    }
+  ]
+}
